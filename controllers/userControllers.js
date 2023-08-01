@@ -47,7 +47,7 @@ const loginUser = async (req, res) => {
     //comparing our hash with password
 
     const isMatch = await bcrypt.compare(password, useremail.password);
-    const token = jwt.sign({ _id: users._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ _id: useremail._id }, process.env.JWT_SECRET);
     console.log({ _id: users._id });
     // res.status(200).json(token);
     if (isMatch) {
